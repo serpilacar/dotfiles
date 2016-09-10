@@ -1,0 +1,173 @@
+override_utf8_locale yes
+out_to_x no
+own_window no
+out_to_console yes
+background no
+short_units yes
+use_spacer left
+if_up_strictness address
+## Update interval in seconds
+update_interval 2
+TEXT
+[
+${if_mpd_playing}
+{
+    "full_text" : "  ${mpd_title 70}",
+	"color": "\#69FF00",
+	"separator": false,
+	"separator_block_width": -2
+},
+{
+	"full_text" : " by ",
+	"separator": false,
+	"separator_block_width": -2
+},
+{
+	"full_text" : "${mpd_artist 50} ",
+	"color": "\#69FF00",
+	"separator": false,
+	"separator_block_width": -2
+},
+{
+	"full_text" : " $mpd_elapsed/$mpd_length ",
+	"color": "\#69FF00"
+},
+${else}
+{
+	"full_text" :" mpd: OFF ",
+	"color": "\#69FF00"
+},
+${endif}
+#### END OF MPD ####
+{
+	"full_text" : "$nodename since $uptime ",
+    "color": "\#FFFFFF",
+	"separator": false,
+	"separator_block_width": 2
+},
+${if_up wlp2s0}
+{
+    "full_text": "   ${addr wlp2s0} ",
+    "background": "\#00EDFF",
+    "color": "\#161616",
+	"separator": false,
+	"separator_block_width": 0
+},
+{
+  "full_text" : "  ${downspeed wlp2s0}  ",
+    "color": "\#00EDFF",
+    "border": "\#00EDFF",
+"separator": false,
+"separator_block_width": -1
+},
+{
+  "full_text" : "  ${upspeed wlp2s0} ",
+    "color": "\#00EDFF",
+    "border": "\#00EDFF",
+  "separator": false,
+  "separator_block_width": -1
+},
+${else}
+{
+	"full_text" : "",
+	"color" : "\#00C9FF"
+},
+${endif}
+#### END OF WIFI ####
+${if_up enp0s29u1u3c4i2}
+{
+    "full_text": " ${addr enp0s29u1u3c4i2} ",
+    "color": "\#00D9EA",
+"separator": false,
+"separator_block_width": -1
+},
+{
+    "full_text":  "   ${totaldown enp0s29u1u3c4i2} ",
+    "color": "\#00D9EA",
+"separator": false,
+"separator_block_width": -1
+},
+${else}
+{
+	"full_text" : "",
+	"color" : "\#00C9FF"
+},
+${endif}
+#### END OF CONNECTION W USB/IPHONE ####
+${if_up enp3s0}
+{
+    "full_text": "   ${addr enp3s0} ",
+    "background": "\#00D9EA",
+    "color": "\#161616",
+	"separator": false,
+	"separator_block_width": 0
+},
+{
+  "full_text" : "  ${downspeed enp3s0}  ",
+    "color": "\#00D9EA",
+    "border": "\#00D9EA",
+"separator": false,
+"separator_block_width": -1
+},
+{
+  "full_text" : "  ${upspeed enp3s0} ",
+    "color": "\#00D9EA",
+    "border": "\#00D9EA",
+  "separator": false,
+  "separator_block_width": -1
+},
+${else}
+{
+	"full_text" : "",
+	"color" : "\#00C9FF"
+},
+${endif}
+#{
+#  "full_text" : " Mem: ${mem} / ${memmax} (${memperc}%) ",
+#  "color" : "\#cccccc"
+#},
+#{
+#	"full_text": ${if_existing /sys/class/power_supply/BAT0/status Discharging} "$battery_percent%|$battery_time"${else}"  : ${battery_percent}% "${endif},
+#	"background" : ${if_match ${battery_percent}<15}"\#EA000B"${else}"\#009A17"${endif},
+#	"color" : "\#FFFFFF",
+#	"border" : "\#FFFFFF",
+#	"separator": true,
+#	"separator_block_width": -1
+#},
+${if_existing /sys/class/power_supply/BAT0/status Discharging}
+	{"full_text": "${if_match ${battery_percent}<=15}  $battery_percent% | $battery_time ","background":"\#EA000B","border":"\#FFFFFF","separator": true,"separator_block_width": -1},
+	{"full_text":"${else}"},
+	{"full_text":"${if_match ${battery_percent}<50}   $battery_percent% | $battery_time ","color":"\#FFF100","border":"\#FFFFFF","separator": true,"separator_block_width": -1},
+	{"full_text":"${else}"},
+	{"full_text":"${if_match ${battery_percent}>=50}   $battery_percent% | $battery_time ","color":"\#00D41F","border":"\#FFFFFF","separator": true,"separator_block_width": -1},
+	{"full_text":"${else}"},
+	{"full_text":"${endif}${endif}${endif}"},
+${else}
+	{"full_text": "   ${battery_percent}% ","background":"\#009A17","border":"\#FFFFFF","separator": true,"separator_block_width": -1},
+${endif}
+#### EXAMPLE BATTERY STATES ###
+#${if_existing /sys/class/power_supply/BAT0/status Discharging}
+#	{"full_text": " ? ","color":"\"859900","separator":false,"separator_block_width":6},\
+#	{"full_text": "${if_match ${battery_percent}<20}${battery_percent}%","color":"\#dc322f"},\
+#	{"full_text":"${else}"},\
+#	{"full_text":"${if_match ${battery_percent}<50}${battery_percent}%","color":"\#b58900"},\
+#	{"full_text":"${else}"},\
+#	{"full_text":"${if_match ${battery_percent}>=50}${battery_percent}%","color":"\#859900"},\
+#	{"full_text":"${else}"},\
+#	{"full_text":"${endif}${endif}${endif}"},\
+#${else}
+#	{"full_text": " ? ${battery_percent}% ","color":"\#859900"},\
+#${endif}
+{
+"full_text" :" CPU: $cpu% ",
+  "border":	"\#FFFFFF",
+"separator": false,
+"background": "\#009A17",
+"separator_block_width": -1,
+ "color" : "\#FFFFFF"
+},
+{
+  "full_text" : " ${time %a, %d %B %y %H:%M:%S}",
+ "color" : "\#ffffff"
+}
+],
