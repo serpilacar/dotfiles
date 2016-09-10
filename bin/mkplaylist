@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo 'find -type f -iname "*.mp4" | sort > "$1.m3u"
+oluşturmak isteiğin klasör içine gel "mkplaylist foo" yaz.'
+
+find -type f -iname "*.mp4" | sort > "$1.m3u"
+
+##oluşturmak isteiğin klasör içine gel "mkplaylist foo" yaz. 

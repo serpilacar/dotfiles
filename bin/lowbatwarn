@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# low battery in %
+LOW_BATTERY="15"
+# critical battery in % (execute action)
+CRITICAL_BATTERY="10"
+# action
+ACTION="systemctl poweroff"
+# display icon
+ICON="/usr/share/icons/notification-battery-low.png"
+# path to battery /sys
+BATTERY_PATH="/sys/class/power_supply/BAT0/"
+# set error message
+MESSAGE="Battery is very LOW
+You should plug in"
+
+
+if [ -e "$BATTERY_PATH" ]; then
+    BATTERY_ON=$(cat $BATTERY_PATH/status)
+
+    if [ "$BATTERY_ON" == "Discharging" ]; then
+        CURRENT_BATTERY=$(cat $BATTERY_PATH/capacity)
+
+        if [ "$CURRENT_BATTERY" -lt "$CRITICAL_BATTERY" ]; then
+            $($ACTION)
+
+        elif [ "$CURRENT_BATTERY" -lt "$LOW_BATTERY" ]; then
+            DISPLAY=:0.0 notify-send -t 30000 -i "$ICON"  "$MESSAGE"
+        fi
+    fi
+fi

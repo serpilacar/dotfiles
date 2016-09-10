@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+up() { xbacklight -inc 5 ;}
+
+down() { xbacklight -dec 5 ;}
+
+notify() {
+  bright=$(</sys/class/backlight/intel_backlight/actual_brightness)
+  if (( bright == 852 )); then
+    score="100"
+  else 
+    score="$(( bright * 100 / 852 ))"
+  fi
+  printf '%s\n' "Backlight set to ${score}%" 
+  notify-send "Brightness: $score % "
+}
+
+if [[ $1 = up ]]; then
+  up && notify
+elif [[ $1 = down ]]; then
+  down && notify
+fi

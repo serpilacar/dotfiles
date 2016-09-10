@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mpc clear && mpc load $1 && mpc play $2 && /usr/bin/pulseaudio-ctl set 80 && notify-send SÜRE BİTTİ -u critical
