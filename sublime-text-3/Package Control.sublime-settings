@@ -1,0 +1,34 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"All Autocomplete",
+		"Autoprefixer",
+		"Bootstrap 3 Snippets",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"CSS Completions",
+		"Djaneiro",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML Snippets",
+		"HTML-CSS-JS Prettify",
+		"HTML5",
+		"JavaScript Snippets",
+		"Monokai Extended",
+		"Package Control",
+		"Phpcs",
+		"Sass",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Monokai",
+		"Theme - SoDaReloaded",
+		"View In Browser"
+	]
+}

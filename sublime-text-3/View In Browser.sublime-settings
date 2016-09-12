@@ -1,0 +1,11 @@
+{
+	"posix": {
+		"linux": {
+			"firefox": "firefox -new-tab",
+			"chrome": "google-chrome-stable",
+			"chrome64": "google-chrome",
+			"chromium": "chromium"
+		}
+	},
+	"browser": "chrome"
+}

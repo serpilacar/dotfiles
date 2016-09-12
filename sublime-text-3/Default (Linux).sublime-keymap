@@ -1,0 +1,21 @@
+[
+  { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+  { "keys": ["alt+w"], "command": "view_in_browser" },
+  { "keys": ["alt+q"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+  { "keys": ["ctrl+shift+h"], "command": "htmlprettify" },
+  { "keys": ["ctrl+shift+8"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+7"], "command": "toggle_comment", "args": { "block": true }},
+	{ "keys": ["ctrl+alt+m"], "command": "toggle_menu"},
+	{ "keys": ["ctrl+alt+c"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+	{ "keys": ["ctrl+space"], "command": "auto_complete" },
+	{ "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+  { "keys": ["alt+right"], "command": "next_view_in_stack" },
+  { "keys": ["alt+left"], "command": "prev_view_in_stack" },
+  { "keys": ["alt+super+p"], "command": "autoprefixer" }
+]
