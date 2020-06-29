@@ -1,0 +1,63 @@
+{
+  "problems.decorations.enabled": false,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.wordWrapColumn": 120,
+  "typescript.format.enable": true,
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "javascript.format.insertSpaceAfterCommaDelimiter": true,
+  "html.format.indentHandlebars": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "window.zoomLevel": 0,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.circleci": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "**/tmp": true,
+    "**/vendor": true
+  },
+  "editor.scrollBeyondLastLine": false,
+  "ruby.intellisense": "rubyLocate",
+  "files.insertFinalNewline": true,
+  "[javascript]": {},
+  "[javascriptreact]": {},
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.wordWrap": "bounded",
+  "workbench.colorTheme": "Quiet Light",
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "off",
+  "files.watcherExclude": {
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "**/node_modules/**": false,
+    "**/tmp": true
+  },
+  "search.exclude": {
+    "**/tmp": true,
+    "node_modules": true
+  },
+  "javascript.suggest.autoImports": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.iconTheme": "vscode-icons",
+  "search.searchOnType": false,
+  "npm.fetchOnlinePackageInfo": false,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "[typescriptreact]": {},
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.renderWhitespace": "none",
+  "eslint.alwaysShowStatus": true
+}
