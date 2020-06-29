@@ -20,11 +20,6 @@ lampp (){
   sudo /opt/lampp/lampp "$1"
 }
 #command | pb --> example: dmesg | pb ile outputu yükler.
-pb () {
-  echo ptpb.pw/j7YS/text#L-123 -line123 icin
-  curl -F "c=@${1:--}" https://ptpb.pw/
-}
-
 upgrade (){
   sudo pacman -Syy && sudo pacman -Su && pacaur -Su
 }
@@ -36,7 +31,7 @@ mkcd () {
 
 sassw() {
   echo 'sass --watch scss:css'
-sass --watch scss:css
+  sass --watch scss:css
 }
 
 bs() {
@@ -77,6 +72,6 @@ function playau() {
   mpv --no-video --ytdl-format=bestaudio --no-resume-playback ytdl://ytsearch10:"$@"
 }
 function playvi(){
- echo mpv --ytdl-format=bestvideo+bestaudio/best --no-resume-playback ytdl://ytsearch10:"$@"
- mpv --ytdl-format=bestvideo+bestaudio/best --no-resume-playback ytdl://ytsearch10:"$@"
+  echo mpv --ytdl-format=bestvideo+bestaudio/best --no-resume-playback ytdl://ytsearch10:"$@"
+  mpv --ytdl-format=bestvideo+bestaudio/best --no-resume-playback ytdl://ytsearch10:"$@"
 }

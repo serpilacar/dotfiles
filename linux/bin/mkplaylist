@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo 'find -type f -iname "*.mp4" | sort > "$1.m3u"'
+
+find -type f -iname "*.mp4" | sort > "$1.m3u"
